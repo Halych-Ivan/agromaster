@@ -1,28 +1,28 @@
 @extends('layouts.index')
 
-@section('title', 'Головна сторінка')
+@section('title', '208 Агроінженерія')
 
 @section('content')
 <!--====== Slider Start ======-->
 <section class="slider-area slider-active">
-    <div class="single-slider d-flex align-items-center bg_cover" style="background-image: url({{asset('/images/sliders/slider-3.jpg')}});">
+    <div class="single-slider d-flex align-items-center bg_cover" style="background-image: url(/images/sliders/slider-3.jpg);">
         <div class="container">
             <div class="slider-content">
                 <h2 class="title" data-animation="fadeInLeft" data-delay="0.2s">Приєднуйся до еліти великої країни</h2>
                 <ul class="slider-btn">
-                    <li><a data-animation="fadeInUp" data-delay="0.6s" class="main-btn main-btn-2" href="#">{{__('Bachelor')}}</a></li>
-                    <li><a data-animation="fadeInUp" data-delay="1s" class="main-btn" href="#">{{__('Master')}}</a></li>
+                    <li><a data-animation="fadeInUp" data-delay="0.6s" class="main-btn main-btn-2" href="#">{{__('Бакалавр')}}</a></li>
+                    <li><a data-animation="fadeInUp" data-delay="1s" class="main-btn" href="#">{{__('Магістр')}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="single-slider d-flex align-items-center bg_cover" style="background-image: url({{asset('/images/sliders/slider-4.jpg')}});">
+    <div class="single-slider d-flex align-items-center bg_cover" style="background-image: url(/images/sliders/slider-4.jpg);">
         <div class="container">
             <div class="slider-content">
                 <h2 class="title" data-animation="fadeInLeft" data-delay="0.2s">Вища освіта Європейського рівня</h2>
                 <ul class="slider-btn">
-                    <li><a data-animation="fadeInUp" data-delay="0.6s" class="main-btn main-btn-2" href="#">{{__('Bachelor')}}</a></li>
-                    <li><a data-animation="fadeInUp" data-delay="1s" class="main-btn" href="#">{{__('Master')}}</a></li>
+                    <li><a data-animation="fadeInUp" data-delay="0.6s" class="main-btn main-btn-2" href="#">{{__('Бакалавр')}}</a></li>
+                    <li><a data-animation="fadeInUp" data-delay="1s" class="main-btn" href="#">{{__('Магістр')}}</a></li>
                 </ul>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-9">
                 <div class="section-title-2 text-center">
-                    <h2 class="title">{{__('Latest Blog Post')}}</h2>
+                    <h2 class="title">{{__('Освітні програми')}}</h2>
                     <span class="line"></span>
                 </div>
             </div>
@@ -51,8 +51,8 @@
                             </a>
                         </div>
                         <div class="blog-content">
-                            <h4 class="blog-title"><a href="">Агроінженерія (освітня програма бакалавр)</a></h4>
-                            <a href="" class="more">Read more <i class="fal fa-chevron-right"></i></a>
+                            <h4 class="blog-title"><a href="">ОП Агроінженерія (бакалавр)</a></h4>
+                            <a href="" class="more">Детально <i class="fal fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                             </a>
                         </div>
                         <div class="blog-content">
-                            <h4 class="blog-title"><a href="">Агроінженерія (освітньо-професійна програма)</a></h4>
-                            <a href="" class="more">Read more <i class="fal fa-chevron-right"></i></a>
+                            <h4 class="blog-title"><a href="">ОПП Агроінженерія (магістр)</a></h4>
+                            <a href="" class="more">Детально <i class="fal fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -77,8 +77,8 @@
                             </a>
                         </div>
                         <div class="blog-content">
-                            <h4 class="blog-title"><a href="">Агроінженерія (освітньо-наукова програма)</a></h4>
-                            <a href="" class="more">Read more <i class="fal fa-chevron-right"></i></a>
+                            <h4 class="blog-title"><a href="">ОНП Агроінженерія (магістр-науковець)</a></h4>
+                            <a href="" class="more">Детально <i class="fal fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>

@@ -28,11 +28,11 @@ class MailController extends Controller
 
         Mail::send(['text'=>'layouts.mail'], $data, function($message) {
             $message->to('galich_iv@ukr.net');
-            $message->subject('Laravel Basic Testing Mail');
-            $message->from('info@agromaster.pp.ua','Config.pp.ua');
+            $message->subject('Запитання з сайту agromaster.pp.ua');
+            $message->from('info@agromaster.pp.ua');
         });
 
-        toast('Your Post as been submited!','error','bottom-right');
+        toast('Ваше запитання відправлено!','error','bottom-right');
 //        alert('Title','Lorem Lorem Lorem', 'success');
         return redirect()->back();
     }
@@ -53,11 +53,11 @@ class MailController extends Controller
 
         Mail::send(['text'=>'mails.newsletter'], $data, function($message) {
             $message->to('galich_iv@ukr.net');
-            $message->subject('Laravel Basic Testing Mail');
+            $message->subject('Запитання з сайту https://agromaster.pp.ua');
             $message->from('info@agromaster.pp.ua');
         });
 
-        toast('Your message has been submited!','success');
+        toast('Ваше запитання відправлено!','success');
         return redirect()->back();
     }
 
@@ -67,9 +67,11 @@ class MailController extends Controller
 
 
 
-    public function basic_email() {
+    public function basic_email()
+    {
 
     }
+
     public function html_email() {
         $data = array('name'=>"Virat Gandhi");
         Mail::send('mail', $data, function($message) {
@@ -88,6 +90,6 @@ class MailController extends Controller
             $message->attach('C:\laravel-master\laravel\public\uploads\test.txt');
             $message->from('xyz@gmail.com','Virat Gandhi');
         });
-        echo "Email Sent with attachment. Check your inbox.";
+        echo "Ваше запитання відправлено!";
     }
 }
