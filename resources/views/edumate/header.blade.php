@@ -32,7 +32,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-2">
                     <div class="header-logo ml-20">
-                        <a href="{{ route('home') }}"><img src="{{asset('/images/logo.png')}}" alt="ФМІ"></a>
+                        <a href="{{ route('home') }}"><img src="{{asset('/logo.png')}}" alt="ФМІ"></a>
                     </div>
                 </div>
                 <div class="col-lg-8 position-static">

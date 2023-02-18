@@ -39,7 +39,7 @@
                                         <span class="answer"></span>
                                         <p>
                                             @if($link)
-                                                <a class="main-btn-sm" href="{{ $link }}{{$student->id}}*{{$subject->id}}*{{md5($subject->title)}}*{{date('d.m.Y')}}&txt=Екзаменаційний лист - {{$student->surname}} {{$student->name}} з {{$subject->title}}" target="_blank">
+                                                <a class="main-btn-sm" href="{{ $link }}{{$student->id}}*{{$subject->id}}*{{md5($subject->title)}}*{{date('d.m.Y')}}&txt=Екзаменаційний лист - {{$student->surname}} {{$student->name}} з {{$subject->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного сладання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
                                                     ViberBot
                                                 </a>
                                             @else

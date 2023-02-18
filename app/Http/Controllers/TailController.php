@@ -183,6 +183,9 @@ class TailController extends Controller
         $tail->mark_n = $mark_n;
         $tail->save();
 
+        toast('Оцінка прийнята','success');
+        return redirect()->route('home');
+
         //dd($tail);
 
         $data = [
