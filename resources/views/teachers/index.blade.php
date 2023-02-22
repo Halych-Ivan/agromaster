@@ -12,11 +12,13 @@
             @foreach($arr as $value)
                 <p>
                     <a href="{{route('home')}}/tail/{{$value['tail']}}" target="_blank">
-                        {{$value['student']->surname}}
-                        {{$value['student']->name}} -
-                        {{$value['subject']->title}}
+                    {{$value['student']->surname}} {{$value['student']->name}} - {{$value['subject']->title}}, {{$value['date']}}
+                    <span class="btn btn-outline-info btn-sm">
+                        Заповнити
+                    </span>
+                    </a>
 
-                    </a>, {{$value['date']}}
+                    <span class="btn btn-outline-danger btn-sm">Відмовити</span>
                 </p>
             @endforeach
 
