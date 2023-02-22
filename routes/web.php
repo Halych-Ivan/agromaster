@@ -50,6 +50,7 @@ Route::get('/curriculum/{id}/pdf', [\App\Http\Controllers\PdfGeneratorController
 // TestController
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index']);
 
+
 // Tail - Хвостовки
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get( 'admin/tail/',  'TailController@adminTailIndex')    ->name('tail.admin.index');
@@ -60,6 +61,22 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('/tail_post',   'TailController@resultPost')        ->name('tail.pos');
     Route::get('/tail/{tail}',  'TailController@index')             ->name('tail');
 });
+
+// Teacher - Викладач
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get( 'teacher/{teacher}',  'TeacherController@index')    ->name('teacher');
+    Route::get( 'admin/teacher/{teacher}',  'TeacherController@adminAddTail')->name('admin.teacher');
+
+});
+
+
+
+
+
+
+
+
+
 
 
 

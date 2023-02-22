@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Tail;
+use App\Models\Teacher;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Imports\DataImport;
@@ -18,6 +19,7 @@ class TailController extends Controller
 
     public function adminTailIndex()
     {
+
         return view('edumate.tail.admin_index');
     }
 
@@ -33,9 +35,6 @@ class TailController extends Controller
         ]);
         if($data['semester'] == 'VV') $data['semester'] = 'VIII';
         $teacher = $data['teacher'] ?? '';
-
-        //dd($data);
-
 
         if(isset($data['gradebook'])){
             $students = Student::query()
@@ -68,13 +67,14 @@ class TailController extends Controller
             $link = false;
         }
 
-        return view('edumate.tail.admin_store', compact('students', 'subjects', 'link', 'teacher'));
+        $teachers = Teacher::query()->orderBy('name')->get();
+        return view('edumate.tail.admin_store', compact('students', 'subjects', 'link', 'teacher', 'teachers'));
     }
 
 
     public function adminTailShow()
     {
-        $tails = Tail::all();
+        $tails = Tail::query()->orderBy('id', 'desc')->get();
         return view('edumate.tail.admin_show', compact('tails'));
     }
 
@@ -82,8 +82,6 @@ class TailController extends Controller
     public function index($tails)
     {
         $txt = explode('*', $tails);
-
-
         $tail = Tail::query()->where('title', $tails)->first();
 
         if($tail){

@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-8">
                 <div class="section-title-2 text-center">
-                    <h2 class="title">{{__('Освітні програми спеціальності 208 Агроінженерія')}}</h2>
+                    <h2 class="title">{!!'Освітні програми спеціальності 208&nbspАгроінженерія'!!}</h2>
                     <span class="line"></span>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                     <div class="single-blog mt-30">
                         <div class="blog-image">
                             <a href="">
-                                <img src="/images/courses/courses-1.jpg" alt="blog">
+                                <img src="/images/courses/208-1.webp" alt="blog">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -28,7 +28,7 @@
                     <div class="single-blog mt-30">
                         <div class="blog-image">
                             <a href="">
-                                <img src="/images/courses/courses-3.jpg" alt="blog">
+                                <img src="/images/courses/208-2.webp" alt="blog">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -41,7 +41,7 @@
                     <div class="single-blog mt-30">
                         <div class="blog-image">
                             <a href="">
-                                <img src="/images/courses/courses-4.jpg" alt="blog">
+                                <img src="/images/courses/208-3.webp" alt="blog">
                             </a>
                         </div>
                         <div class="blog-content">

@@ -39,7 +39,7 @@
                                         <span class="answer"></span>
                                         <p>
                                             @if($link)
-                                                <a class="main-btn-sm" href="{{ $link }}{{$student->id}}*{{$subject->id}}*{{md5($subject->title)}}*{{date('d.m.Y')}}&txt=Екзаменаційний лист - {{$student->surname}} {{$student->name}} з {{$subject->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного сладання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
+                                                <a class="main-btn-sm" href="{{ $link }}{{$student->id}}*{{$subject->id}}*{{md5($subject->title)}}*{{date('d.m.Y')}}&txt=Екзаменаційний лист - {{$student->surname}} {{$student->name}} з {{$subject->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного складання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
                                                     ViberBot
                                                 </a>
                                             @else
@@ -48,7 +48,14 @@
                                                 <a href="{{route('home')}}/tail/{{$student->id}}*{{$subject->id}}*{{md5($subject->title)}}*{{date('d.m.Y')}}" target="_blank">
                                                     {{route('home')}}/tail/{{$student->id}}*{{$subject->id}}*{{md5($subject->title)}}*{{date('d.m.Y')}}
                                                 </a>
+
                                         </p>
+                                        <p>Додати в список для викладача</p>
+                                        <ul class="nav-dropdown">
+                                        @foreach($teachers as $item)
+                                            <div class="text-sm mb-2">{{$item->name}} <a href="{{route('admin.teacher', $item->id.'?link='.$student->id.'*'.$subject->id.'*'.md5($subject->title).'*'.date('d.m.Y'))}}" class="badge-info" target="_blank">Додати</a></div>
+                                        @endforeach
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
