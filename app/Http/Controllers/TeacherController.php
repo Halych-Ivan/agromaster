@@ -21,6 +21,8 @@ class TeacherController extends Controller
             return redirect()->route('home');
         }
 
+        $arr = array();
+
         if($teacher->tails){
             $tails = explode("||", $teacher->tails);
             //array_pop($tails);

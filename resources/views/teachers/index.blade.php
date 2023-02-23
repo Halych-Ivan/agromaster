@@ -1,3 +1,10 @@
+<?php
+$link = 'https://bot.agromaster.pp.ua/send.php?id=U6YKuNsstv1BEInWwL8HwA==&url='.route('home').'/tail/';
+$link2 = 'https://bot.agromaster.pp.ua/send.php?id=NCQUKdH3i3bcOfKOl8phkg==&url='.route('home').'/tail/';
+
+?>
+
+
 @extends('layouts.index')
 
 @section('title', 'Аркуш успішності')
@@ -17,6 +24,17 @@
                         Заповнити
                     </span>
                     </a>
+                    <span class="btn btn-outline-primary btn-sm">
+                        <a class="" href="{{ $link }}{{$value['student']->id}}*{{$value['subject']->id}}*{{md5($value['subject']->title)}}*{{date('d.m.Y')}}&txt=Екзаменаційний лист - {{$value['student']->surname}} {{$value['student']->name}} з {{$value['subject']->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного складання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
+                            Bot Г.І.В.
+                        </a>
+                    </span>
+                    <span class="btn btn-outline-success btn-sm">
+                        <a class="" href="{{ $link }}{{$value['student']->id}}*{{$value['subject']->id}}*{{md5($value['subject']->title)}}*{{date('d.m.Y')}}&txt=Екзаменаційний лист - {{$value['student']->surname}} {{$value['student']->name}} з {{$value['subject']->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного складання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
+                            Bot М.О.М.
+                        </a>
+                    </span>
+
 
                     <span class="btn btn-outline-danger btn-sm">Відмовити</span>
                 </p>
