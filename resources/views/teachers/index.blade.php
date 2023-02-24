@@ -30,7 +30,7 @@ $link2 = 'https://bot.agromaster.pp.ua/send.php?id=NCQUKdH3i3bcOfKOl8phkg==&url=
                         </a>
                     </span>
                     <span class="btn btn-outline-success btn-sm">
-                        <a class="" href="{{ $link }}{{$value['tail']}}&txt=Екзаменаційний лист - {{$value['student']->surname}} {{$value['student']->name}} з {{$value['subject']->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного складання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
+                        <a class="" href="{{ $link2 }}{{$value['tail']}}&txt=Екзаменаційний лист - {{$value['student']->surname}} {{$value['student']->name}} з {{$value['subject']->title}}, дата видачі {{date('d.m.Y')}}. У разі успішного складання заліку чи іспиту необхідно заповнити поле оцінки в балах, прізвище та ініціали викладача." target="_blank">
                             Bot М.О.М.
                         </a>
                     </span>
