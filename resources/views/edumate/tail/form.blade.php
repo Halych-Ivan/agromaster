@@ -66,10 +66,10 @@
                 if(Value > 89){
                     $('#ECTS').text('ECTS A.');
                     $('#mark').text('відмінно');
-                } else if(Value > 82){
+                } else if(Value > 81){
                     $('#ECTS').text('ECTS B.');
                     $('#mark').text('добре');
-                } else if(Value > 74){
+                } else if(Value > 73){
                     $('#ECTS').text('ECTS C.');
                     $('#mark').text('добре');
                 } else if(Value > 63){
