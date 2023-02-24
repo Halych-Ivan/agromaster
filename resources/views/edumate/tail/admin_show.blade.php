@@ -11,7 +11,11 @@
         <div>
             <h2>Всі екзаменаційні аркуші</h2>
             @foreach($tails as $tail)
-                <a href="{{route('tail', $tail->title)}}">{{$tail->id}} {{$tail->student}} - <u>{{$tail->subject}}</u>, <b>{{$tail->mark}}{{$tail->ects}} {{$tail->mark_n}}</b>, {{ $tail->date_in }}</a><br>
+
+                <a @if($tail->name) class="btn-sm btn-outline-success"@else class="btn-sm btn-success"@endif
+                    href="{{ route('edit_view', $tail->id) }}" >OK</a>
+                <a @if($tail->name)style="color: lightgrey"@endif
+                    href="{{route('tail', $tail->title)}}">{{$tail->id}} {{$tail->student}} - <u>{{$tail->subject}}</u>, <b>{{$tail->mark}}{{$tail->ects}} {{$tail->mark_n}}</b>, {{ $tail->date_in }}</a><br>
                 <hr class="m-1">
             @endforeach
         </div>

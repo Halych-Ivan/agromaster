@@ -213,4 +213,14 @@ class TailController extends Controller
         //return $pdf->download('laraveltuts.pdf');
         //return view('admin.tail.pdf', compact('student', 'subject'));
     }
+
+    public function editView(Tail $tail)
+    {
+        if(!$tail->name) $tail->name = 'Ok';
+        else $tail->name = '';
+
+        $tail->save();
+        return redirect()->back();
+    }
+
 }

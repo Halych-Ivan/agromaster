@@ -60,6 +60,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
     Route::post('/tail_post',   'TailController@resultPost')        ->name('tail.pos');
     Route::get('/tail/{tail}',  'TailController@index')             ->name('tail');
+    Route::get('/edit/{tail}',  'TailController@editView')           ->name('edit_view');
 });
 
 // Teacher - Викладач
