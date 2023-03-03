@@ -22,20 +22,34 @@
             </div>
             <div class="">
                 <div class="single-notice">
-                    <span class="number">-</span>
+                    <span class="number">-1-</span>
                     <h3 class="notice-title">
-                        <a href="{{ asset($link.'/11М (208-22б-01).pdf') }}" target="_blank">11М (208-22б-01)</a>, |
-                        <a href="{{ asset($link.'/12М (208-22б-02).pdf') }}" target="_blank">12М (208-22б-02)</a>, |
-                        <a href="{{ asset($link.'/13М (208-22б-03).pdf') }}" target="_blank">13М (208-22б-03)</a>
+                        <a href="{{ asset($link.'/11М (208-22б-01).docx') }}" target="_blank">11М (208-22б-01)</a>, |
+                        <a href="{{ asset($link.'/12М (208-22б-02).docx') }}" target="_blank">12М (208-22б-02)</a>, |
+                        <a href="{{ asset($link.'/13М (208-22б-03).docx') }}" target="_blank">13М (208-22б-03)</a>
                     </h3>
                 </div>
                 <div class="single-notice">
-                    <span class="number">-</span>
-                    <h3 class="notice-title"><a href="{{ asset($link.'/208/208-2.pdf') }}" target="_blank">2 курс (21М, 22М, 23М, 25М, 26Мпр)</a></h3>
+                    <span class="number">-2-</span>
+                    <h3 class="notice-title">
+                        <a href="{{ asset($link.'/21М (208-21б-01).docx') }}" target="_blank">21М (208-21б-01)</a>, |
+                        <a href="{{ asset($link.'/22М (208-21б-02).docx') }}" target="_blank">22М (208-21б-02)</a>, |
+                        <a href="{{ asset($link.'/23М (208-21б-03).docx') }}" target="_blank">23М (208-21б-03)</a>, |
+                        <a href="{{ asset($link.'/25М (208-21б-04).docx') }}" target="_blank">25М (208-21б-04)</a>, |
+                        <a href="{{ asset($link.'/26Мпр (208-22б-стн-3-01).docx') }}" target="_blank">26Мпр (208-22б-стн-3-01)</a>
+                    </h3>
                 </div>
                 <div class="single-notice">
-                    <span class="number">-</span>
-                    <h3 class="notice-title"><a href="{{ asset($link.'/208/208-3.pdf') }}" target="_blank">3 курс, (31М, 32М, 33М, 34Мпр, 35Мпр, 36Мпр, 38М, 38Мпр)</a></h3>
+                    <span class="number">-3-</span>
+                    <h3 class="notice-title">
+                        <a href="{{ asset($link.'/31М (208-20б-01).docx') }}" target="_blank">31М (208-20б-01)</a>, |
+                        <a href="{{ asset($link.'/32М (208-20б-02).docx') }}" target="_blank">32М (208-20б-02)</a>, |
+                        <a href="{{ asset($link.'/33М (208-20б-03).docx') }}" target="_blank">33М (208-20б-03)</a>, |
+                        <a href="{{ asset($link.'/34Мпр (208-21б-стн-3-01).docx') }}" target="_blank">34Мпр (208-21б-стн-3-01)</a>, |
+                        <a href="{{ asset($link.'/35Мпр (208-21б-стн-3-02).docx') }}" target="_blank">35Мпр (208-21б-стн-3-02)</a>, |
+                        <a href="{{ asset($link.'/36Мпр (208-21б-стн-3-03).docx') }}" target="_blank">36Мпр (208-21б-стн-3-03)</a>, |
+                        <a href="{{ asset($link.'/38М + 38Мпр.docx') }}" target="_blank">38М + 38Мпр</a>
+                    </h3>
                 </div>
                 <div class="single-notice">
                     <span class="number">-</span>
@@ -61,18 +75,23 @@
             </div>
             <div class="">
                 <div class="single-notice">
-                    <span class="number">-</span>
+                    <span class="number">-1-</span>
                     <h3 class="notice-title">
-                        <a href="{{ asset($link.'/14АТ (274-22б-01).pdf') }}" target="_blank">14АТ (274-22б-01)</a>
+                        <a href="{{ asset($link.'/14АТ (274-22б-01).docx') }}" target="_blank">14АТ (274-22б-01)</a>
                     </h3>
                 </div>
                 <div class="single-notice">
-                    <span class="number">-</span>
-                    <h3 class="notice-title"><a href="{{ asset($link.'/274/274-2.pdf') }}" target="_blank">2 курс (24АТ, 24АТпр)</a></h3>
+                    <span class="number">-2-</span>
+                    <h3 class="notice-title">
+                        <a href="{{ asset($link.'/24АТ+274АТпр (274-21б-01+274-22б-стн-3-01).docx') }}" target="_blank">24АТ (274-21б-01)</a>, |
+                        <a href="{{ asset($link.'/24АТ+274АТпр (274-21б-01+274-22б-стн-3-01).docx') }}" target="_blank">24АТпр (274-22б-стн-3-01)</a>
+                    </h3>
                 </div>
                 <div class="single-notice">
-                    <span class="number">-</span>
-                    <h3 class="notice-title"><a href="{{ asset($link.'/274/274-3.pdf') }}" target="_blank">3 курс, (37АТ)</a></h3>
+                    <span class="number">-3-</span>
+                    <h3 class="notice-title">
+                        <a href="{{ asset($link.'/37АТ (274-20б-01).docx') }}" target="_blank">37АТ (274-20б-01)</a>
+                    </h3>
                 </div>
                 <div class="single-notice">
                     <span class="number">-</span>
