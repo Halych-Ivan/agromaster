@@ -1,9 +1,9 @@
 @extends('layouts.index')
 
-@section('title', 'Списки груп')
+@section('title', 'Розклад занять')
 
 @section('page-banner')
-    <x-page-banner title="Списки груп" img="/images/page-banner-1.jpg"></x-page-banner>
+    <x-page-banner title="Розклад занять" img="/images/page-banner-1.jpg"></x-page-banner>
 @endsection
 
 @section('content')
