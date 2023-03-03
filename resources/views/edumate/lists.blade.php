@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @php($link = 'documents/schedule/2022-2023-II/')
+    @php($link = 'documents/lists/')
 
     <section class="container">
         <div class="container ml-10">
@@ -23,7 +23,11 @@
             <div class="">
                 <div class="single-notice">
                     <span class="number">-</span>
-                    <h3 class="notice-title"><a href="{{ asset($link.'/208/208-1.pdf') }}" target="_blank">1 курс (11М, 12М, 13М)</a></h3>
+                    <h3 class="notice-title">
+                        <a href="{{ asset($link.'/11М (208-22б-01).pdf') }}" target="_blank">11М (208-22б-01)</a>, |
+                        <a href="{{ asset($link.'/12М (208-22б-02).pdf') }}" target="_blank">12М (208-22б-02)</a>, |
+                        <a href="{{ asset($link.'/13М (208-22б-03).pdf') }}" target="_blank">13М (208-22б-03)</a>
+                    </h3>
                 </div>
                 <div class="single-notice">
                     <span class="number">-</span>
@@ -58,7 +62,9 @@
             <div class="">
                 <div class="single-notice">
                     <span class="number">-</span>
-                    <h3 class="notice-title"><a href="{{ asset($link.'/274/274-1.pdf') }}" target="_blank">1 курс (14АТ)</a></h3>
+                    <h3 class="notice-title">
+                        <a href="{{ asset($link.'/14АТ (274-22б-01).pdf') }}" target="_blank">14АТ (274-22б-01)</a>
+                    </h3>
                 </div>
                 <div class="single-notice">
                     <span class="number">-</span>

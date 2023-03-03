@@ -21,7 +21,9 @@ Route::post('/newsletter','\App\Http\Controllers\MailController@newsletter');
 Route::get('/contact', \App\Http\Controllers\ContactController::class)->name('contact');
 Route::post('/contact/form','\App\Http\Controllers\MailController@contact_form');
 
+
 Route::get('/schedule', function () {    return view('edumate.schedule'); })->name('schedule'); // розклад
+Route::get('/lists', function () {    return view('edumate.lists'); })->name('lists'); // розклад
 Route::get('/session', function () {    return view('edumate.session'); })->name('session'); // сесія
 Route::get('/admission', function () {    return view('edumate.admission.index'); })->name('admission'); // інд. план
 Route::get('/statement', function () {    return view('edumate.statement'); })->name('statement'); // інфо
