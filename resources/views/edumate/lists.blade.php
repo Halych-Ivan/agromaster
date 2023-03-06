@@ -49,6 +49,7 @@
                         <a href="{{ asset($link.'/35Мпр (208-21б-стн-3-02).docx') }}" target="_blank">35Мпр (208-21б-стн-3-02)</a>, |
                         <a href="{{ asset($link.'/36Мпр (208-21б-стн-3-03).docx') }}" target="_blank">36Мпр (208-21б-стн-3-03)</a>, |
                         <a href="{{ asset($link.'/38М + 38Мпр.docx') }}" target="_blank">38М + 38Мпр</a>
+
                     </h3>
                 </div>
                 <div class="single-notice">
