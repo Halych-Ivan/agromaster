@@ -13,4 +13,10 @@ class Teacher extends Model
 
     protected $table = 'teachers';
     protected $guarded = false;
+
+
+    public function cathedra()
+    {
+        return $this->belongsTo(Cathedra::class, 'cathedra_id');
+    }
 }

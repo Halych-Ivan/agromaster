@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cathedra;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Tail;
@@ -12,6 +13,15 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
+
+    public function show()
+    {
+        $teachers = Teacher::all();
+        $cathedras = Cathedra::all();
+        return view('edumate.teachers.index', compact('teachers', 'cathedras'));
+    }
+
+
 
     public function index(Teacher $teacher, Request $request)
     {

@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('info')->nullable();
             $table->string('tails')->nullable();
 
+            $table->string('position');
+            $table->foreignId('cathedra_id')->references('id')->on('cathedras');
+
             $table->softDeletes();
             $table->timestamps();
         });

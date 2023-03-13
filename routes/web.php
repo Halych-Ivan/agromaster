@@ -22,11 +22,43 @@ Route::get('/contact', \App\Http\Controllers\ContactController::class)->name('co
 Route::post('/contact/form','\App\Http\Controllers\MailController@contact_form');
 
 
-Route::get('/schedule', function () {    return view('edumate.schedule'); })->name('schedule'); // розклад
-Route::get('/lists', function () {    return view('edumate.lists'); })->name('lists'); // розклад
-Route::get('/session', function () {    return view('edumate.session'); })->name('session'); // сесія
-Route::get('/admission', function () {    return view('edumate.admission.index'); })->name('admission'); // інд. план
-Route::get('/statement', function () {    return view('edumate.statement'); })->name('statement'); // інфо
+
+// Прості сторінки сайту
+Route::view('/schedule','edumate.schedule')->name('schedule'); // розклад
+Route::view('/lists','edumate.lists')->name('lists'); // списки груп
+Route::view('/session','edumate.session')->name('session'); // сесія
+Route::view('/admission','edumate.admission.index')->name('admission'); // інд. план
+Route::view('/statement','edumate.statement')->name('statement'); // заяви
+
+
+Route::get('/teachers', ['\App\Http\Controllers\TeacherController', 'show'])->name('teachers'); // заяви
+
+
+
+
+Route::view('/plan','edumate.plan')->name('plan'); // заяви
+
+
+
+//
+//Route::prefix('admin')->as('admin')->namespace('')->group( function (){
+//
+//});
+
+
+// Контроллер для постів. Проба ресурс
+Route::resource('posts', \App\Http\Controllers\Posts\PostController::class);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -84,8 +116,40 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 
 
+Route::prefix('admin')->name('admin.')->group(function (){
+    // Контроллер для викладачів
+    Route::resource('cathedras', App\Http\Controllers\Admin\CathedrasController::class);
+    Route::resource('teachers', App\Http\Controllers\Admin\TeachersController::class);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Admin panel
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', /*'middleware' => ['auth', 'admin']*/], function (){
+
+    Route::view('/','admin.index')->name('admin1'); // admin
+
+
+
+
 
 
     Route::group(['namespace' => 'User', 'prefix' => 'users'], function (){
@@ -98,15 +162,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::delete('/{user}',            'DeleteController')->   name('admin.user.delete');
     });
 
-    Route::group(['prefix' => 'cathedras'], function (){
-        Route::get('/',                     'CathedraController@index')->    name('admin.cathedra.index');
-        Route::get('/create',               'CathedraController@create')->   name('admin.cathedra.create');
-        Route::post('/',                    'CathedraController@store')->    name('admin.cathedra.store');
-        Route::get('/{cathedra}',            'CathedraController@show')->     name('admin.cathedra.show');
-        Route::get('/{cathedra}/edit',       'CathedraController@edit')->     name('admin.cathedra.edit');
-        Route::patch('/{cathedra}',          'CathedraController@update')->   name('admin.cathedra.update');
-        Route::delete('/{cathedra}',         'CathedraController@delete')->   name('admin.cathedra.delete');
-    });
+//    Route::group(['prefix' => 'cathedras'], function (){
+//        Route::get('/',                     'CathedraController@index')->    name('admin.cathedra.index');
+//        Route::get('/create',               'CathedraController@create')->   name('admin.cathedra.create');
+//        Route::post('/',                    'CathedraController@store')->    name('admin.cathedra.store');
+//        Route::get('/{cathedra}',            'CathedraController@show')->     name('admin.cathedra.show');
+//        Route::get('/{cathedra}/edit',       'CathedraController@edit')->     name('admin.cathedra.edit');
+//        Route::patch('/{cathedra}',          'CathedraController@update')->   name('admin.cathedra.update');
+//        Route::delete('/{cathedra}',         'CathedraController@delete')->   name('admin.cathedra.delete');
+//    });
 
     Route::group(['prefix' => 'subjects'], function (){
         Route::get('/',                     'SubjectController@index')->    name('admin.subject.index');
