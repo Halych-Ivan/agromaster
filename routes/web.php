@@ -31,6 +31,7 @@ Route::view('/admission','edumate.admission.index')->name('admission'); // ін�
 Route::view('/statement','edumate.statement')->name('statement'); // заяви
 
 
+
 Route::get('/teachers', ['\App\Http\Controllers\TeacherController', 'show'])->name('teachers'); // заяви
 
 
@@ -116,7 +117,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 
 
-Route::prefix('admin')->name('admin.')->group(function (){
+Route::prefix('admin')->name('admin.')->middleware('auth', 'admin')->group(function (){
     // Контроллер для викладачів
     Route::resource('cathedras', App\Http\Controllers\Admin\CathedrasController::class);
     Route::resource('teachers', App\Http\Controllers\Admin\TeachersController::class);
@@ -130,22 +131,10 @@ Route::prefix('admin')->name('admin.')->group(function (){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Admin panel
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', /*'middleware' => ['auth', 'admin']*/], function (){
 
-    Route::view('/','admin.index')->name('admin1'); // admin
+//    Route::view('/','admin.index')->name('admin1'); // admin
 
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.index')
 
-@section('title', 'Індивідуальний навчальний план')
+@section('title', 'Викладачі')
 
 @section('page-banner')
     <x-page-banner title="Викладачі" img="/images/page-banner-1.jpg"></x-page-banner>

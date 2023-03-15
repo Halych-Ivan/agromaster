@@ -40,18 +40,21 @@ class TeachersController extends Controller
     {
         $teacher = Teacher::find($id);
         $cathedras = Cathedra::all();
-        return view('admin.teachers.edit', compact('teacher', 'cathedras'));
+        $cathedra_title = $teacher->cathedra->title ?? '';
+        return view('admin.teachers.edit', compact('teacher', 'cathedras', 'cathedra_title'));
     }
 
 
     public function update(Request $request, $id)
     {
+//        dd($request);
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
             'phone' => 'nullable|string|max:255',
             'position' => 'nullable|string|max:255',
-            'cathedra' => 'nullable|integer|max:3',
+            'meet' => 'nullable|string|max:255',
+            'cathedra' => 'nullable|string|max:3',
             'photo' => 'nullable|mimes:jpg,jpeg,bmp,png,gif,webp',
         ]);
 
@@ -62,6 +65,7 @@ class TeachersController extends Controller
         if(isset($request->phone)){ $teacher->phone = $request->phone; }
         if(isset($request->cathedra)){ $teacher->cathedra_id = $request->cathedra; }
         if(isset($request->position)){ $teacher->position = $request->position; }
+        if(isset($request->meet)){ $teacher->meet = $request->meet; }
 
         if($request->photo){
             $photo = $request->file('photo')->storePublicly('public/teachers/'.$id);

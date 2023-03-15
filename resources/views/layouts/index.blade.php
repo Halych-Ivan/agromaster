@@ -41,20 +41,22 @@
     </head>
     <body class="">
 
-        @include('edumate.header')
+
+    @include('edumate.header')
 
 
-        @yield('page-banner')
+    @yield('page-banner')
 
-        @yield('content')
+    @yield('content')
+    @include('flash.alert')
 
-        @include('edumate.newsletter')
+    @include('edumate.newsletter')
 
 
 {{--        @include('edumate.footer')--}}
 
 
-        @include('sweetalert::alert')
+{{--        @include('sweetalert::alert')--}}
         <!--====== Jquery js ======-->
         <script src="{{ asset("js/jquery-3.5.1.min.js") }}"></script>
         <script src="{{ asset("js/modernizr-3.7.1.min.js") }}"></script>
@@ -62,6 +64,7 @@
         <!--====== All Plugins js ======-->
         <script src="{{ asset("js/plugins/popper.min.js") }}"></script>
         <script src="{{ asset("js/plugins/bootstrap.min.js") }}"></script>
+        <script src="{{ asset("js/plugins/bootstrap.bundle.min.js") }}"></script>
         <script src="{{ asset("js/plugins/slick.min.js") }}"></script>
         <script src="{{ asset("js/plugins/jquery.magnific-popup.min.js") }}"></script>
         <script src="{{ asset("js/plugins/jquery.appear.min.js") }}"></script>

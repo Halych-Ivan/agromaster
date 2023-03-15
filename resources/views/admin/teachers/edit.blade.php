@@ -31,10 +31,13 @@
                             <input type="text" class="form-control" name="phone"  value="{{$teacher->phone}}" placeholder="Телефон">
                         </div>
                         <div class="form-group">
+                            <input type="text" class="form-control" name="meet"  value="{{$teacher->meet}}" placeholder="Посилання google.meet">
+                        </div>
+                        <div class="form-group">
                             <select class="form-control" id="cathedra" name="cathedra">
                                 <option name="cathedra" value="0">Кафедра</option>
                                 @foreach($cathedras as $cathedra)
-                                    <option name="cathedra" value="{{$cathedra->id}}" {{$teacher->cathedra->title??'' == $cathedra->title ? "selected" : "" }}>{{$cathedra->title}}</option>
+                                    <option name="cathedra" value="{{$cathedra->id}}" {{$cathedra->id == $cathedra_title ? "selected" : ""}}>{{$cathedra->title}}</option>
                                 @endforeach
                             </select>
                         </div>
