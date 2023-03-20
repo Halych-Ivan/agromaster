@@ -19,7 +19,12 @@
                     <label class="input-group-text w-25" for="select01">Кафедра</label>
                     <select class="form-select w-75" id="select01" name="cathedra_id">
                         @foreach($cathedras as $cathedra)
-                            <option value="{{$cathedra->id}}" {{($teacher->cathedra->id??'' == $cathedra->id) ? 'selected' : '' }}>{{$cathedra->title}}</option>
+                            <option value="{{$cathedra->id}}"
+                                @if(isset($teacher->cathedra->id))
+                                    {{($teacher->cathedra->id == $cathedra->id) ? 'selected' : '' }}
+                                @endif
+                            >{{$cathedra->title}}
+                            </option>
                         @endforeach
                     </select>
                 </div>

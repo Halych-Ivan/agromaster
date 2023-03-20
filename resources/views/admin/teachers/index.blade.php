@@ -3,7 +3,10 @@
 @section('title', 'Викладачі - всі записи')
 
 @section('content')
+    @php(session(['page' => $teachers->currentPage()]))
+
     <div class="">
+        {{ $teachers->links('admin.layout.pagination') }}
         <table class="table table-bordered">
             <thead>
             <tr>

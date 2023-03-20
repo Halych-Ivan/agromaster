@@ -51,7 +51,9 @@ class TeachersController extends Controller
     {
         $data = $request->validated();
         $this->saveData($data, $teacher, 'teachers'); // protected in Controller
-        return redirect()->route('admin.teachers.index')->with('alert', 'Дія виконана успішно!');
+
+        $page = (session('page')) ?'page='.session('page') : '';
+        return redirect()->route('admin.teachers.index', $page)->with('alert', 'Дія виконана успішно!');
     }
 
 
