@@ -29,6 +29,7 @@
             <tr>
                 <td>Фото</td>
                 <th>
+                    {{$teacher->photo}}
                     <img src="{{$teacher->photo}}" alt="" height="100">
                 </th>
             </tr>
