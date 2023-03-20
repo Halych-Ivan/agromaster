@@ -9,6 +9,7 @@
             @csrf
             {{--            @method('PATCH')--}}
             <x-form.text name="title" value="{{old('title')}}" placeholder="Назва"></x-form.text>
+            <x-form.text name="abbr" value="{{old('abbr')}}" placeholder="Абревіатура"></x-form.text>
             <x-form.file src="{{old('logo')}}" name="logo" title="Виберіть картинку" type="img"></x-form.file>
             <x-form.textarea rows="3" name="info" value="{{old('info')}}"></x-form.textarea>
             <x-form.botton></x-form.botton>
