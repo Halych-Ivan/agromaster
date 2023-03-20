@@ -1,56 +1,33 @@
-@extends('cabinet.layout')
-@section('title', 'ADMIN')
+@extends('admin.layout.admin')
 
-@section('page-banner')
-
-@endsection
-
+@section('title', 'Кафедри - всі записи')
 
 @section('content')
-
-
-    <div class="container m-2">
-        <a class="btn btn-outline-success" href="{{route('admin.cathedras.create')}}" type="submit">Додати</a>
-    </div>
-
-    <div class="card card-body">
-        <div class="table-responsive">
-            <table class="table table-striped search-table v-middle">
-                <thead class="header-item">
-                <th class="text-dark font-weight-bold">Назва</th>
-                <th class="text-center"></th>
-                </thead>
-                <tbody>
-
-                @foreach($cathedras as $cathedra)
-
-                    <tr class="search-items">
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="{{$cathedra->logo}}" alt="avatar" class="rounded-circle" width="35">
-                                <div class="ml-2">
-                                    <div class="user-meta-info">
-                                        <h5 class="user-name mb-0" data-name="Emma Adams">{{$cathedra->title}}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <div class="action-btn">
-                                <a href="{{route('admin.cathedras.edit', $cathedra->id)}}" class="text-info edit">
-                                    <i class="mdi mdi-account-edit font-20"></i>
-                                </a>
-                                <a href="javascript:void(0)" class="text-dark delete ml-2">
-                                    <i class="mdi mdi-delete font-20"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+    <div class="">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">Назва</th>
+                <th class="text-center">Логотип</th>
+                <th class="text-center">Примітки</th>
+                <th class="text-center">Активні дії</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($cathedras as $cathedra)
+                <tr>
+                    <td class="text-center">{{$loop->iteration}}</td>
+                    <td><b>{{$cathedra->title}}</b></td>
+                    <td class="text-center"><img src="{{$cathedra->logo}}" alt="" height="50"></td>
+                    <td><b>{{$cathedra->info}}</b></td>
+                    <td class="text-center"><x-admin.action-icons resource="cathedras" id="{{$cathedra->id}}"></x-admin.action-icons></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            {{--        {{ $levels->links('admin.pagination') }}--}}
         </div>
     </div>
-
-
 @endsection

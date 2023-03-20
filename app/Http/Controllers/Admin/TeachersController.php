@@ -3,86 +3,60 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\AdminRequest;
 use App\Models\Cathedra;
 use App\Models\Teacher;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class TeachersController extends Controller
 {
 
     public function index()
     {
-        $teachers = Teacher::all();
+        $size = $request['size'] ?? 10;
+        $teachers = Teacher::query()->orderBy('name')->paginate($size);
         return view('admin.teachers.index', compact('teachers'));
     }
 
 
     public function create()
     {
-        //
+        $cathedras = Cathedra::query()->select('id', 'title')->get();
+        return view('admin.teachers.create', compact('cathedras'));
     }
 
 
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
-        //
+        $data = $request->validated();
+        $teacher = new Teacher();
+        $this->saveData($data, $teacher, 'teachers'); // protected in Controller
+        return view('admin.teachers.show', compact('teacher'))->with('alert', 'Дія виконана успішно!');
     }
 
 
-    public function show($id)
+    public function show(Teacher $teacher)
     {
-        //
+        return view('admin.teachers.show', compact('teacher'));
     }
 
 
-    public function edit($id)
+    public function edit(Teacher $teacher)
     {
-        $teacher = Teacher::find($id);
-        $cathedras = Cathedra::all();
-        $cathedra_title = $teacher->cathedra->title ?? '';
-        return view('admin.teachers.edit', compact('teacher', 'cathedras', 'cathedra_title'));
+        $cathedras = Cathedra::query()->select('id', 'title')->get();
+        return view('admin.teachers.edit', compact('teacher', 'cathedras'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, Teacher $teacher)
     {
-//        dd($request);
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'nullable|email|max:255',
-            'phone' => 'nullable|string|max:255',
-            'position' => 'nullable|string|max:255',
-            'meet' => 'nullable|string|max:255',
-            'cathedra' => 'nullable|string|max:3',
-            'photo' => 'nullable|mimes:jpg,jpeg,bmp,png,gif,webp',
-        ]);
-
-        $teacher = Teacher::find($id);
-
-        if(isset($request->name)){ $teacher->name = $request->name; }
-        if(isset($request->email)){ $teacher->email = $request->email; }
-        if(isset($request->phone)){ $teacher->phone = $request->phone; }
-        if(isset($request->cathedra)){ $teacher->cathedra_id = $request->cathedra; }
-        if(isset($request->position)){ $teacher->position = $request->position; }
-        if(isset($request->meet)){ $teacher->meet = $request->meet; }
-
-        if($request->photo){
-            $photo = $request->file('photo')->storePublicly('public/teachers/'.$id);
-            $url = Storage::url($photo);
-            $teacher->photo = $url;
-        }
-
-//        dd($teacher);
-
-        $teacher->save();
-
-        return redirect()->route('admin.teachers.index');
+        $data = $request->validated();
+        $this->saveData($data, $teacher, 'teachers'); // protected in Controller
+        return redirect()->route('admin.teachers.index')->with('alert', 'Дія виконана успішно!');
     }
 
 
-    public function destroy($id)
+    public function destroy(Teacher $teacher)
     {
-        //
+        return redirect()->route('admin.teachers.index')->with('danger', 'Функція видалення не реалізована!!!');
     }
 }

@@ -82,8 +82,7 @@ Route::get('/curriculum/{id}/pdf', [\App\Http\Controllers\PdfGeneratorController
 
 
 
-// TestController
-Route::get('/test', [\App\Http\Controllers\TestController::class, 'index']);
+
 
 
 // Tail - Хвостовки
@@ -113,14 +112,31 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 
 
+// TestController
+Route::get('/test', [\App\Http\Controllers\TestController::class, 'index']);
+
+//************************************************************
+// Admin panel
+//************************************************************
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function (){
+
+    Route::view('/','admin.index')->name(''); // заяви
+
+    Route::resource('levels', App\Http\Controllers\Admin\LevelsController::class);
+    Route::resource('specialties', App\Http\Controllers\Admin\SpecialtiesController::class);
+    Route::resource('programs', App\Http\Controllers\Admin\ProgramsController::class);
 
 
-
-
-Route::prefix('admin')->name('admin.')->middleware('auth', 'admin')->group(function (){
-    // Контроллер для викладачів
     Route::resource('cathedras', App\Http\Controllers\Admin\CathedrasController::class);
     Route::resource('teachers', App\Http\Controllers\Admin\TeachersController::class);
+
+    Route::resource('groups', App\Http\Controllers\Admin\GroupsController::class);
+
+
+
+
+    Route::resource('subjects', App\Http\Controllers\Admin\SubjectsController::class);
+    Route::resource('plans', App\Http\Controllers\Admin\PlansController::class);
 });
 
 
@@ -131,7 +147,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth', 'admin')->group(funct
 
 
 
-// Admin panel
+
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', /*'middleware' => ['auth', 'admin']*/], function (){
 
 //    Route::view('/','admin.index')->name('admin1'); // admin
@@ -161,15 +177,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 //        Route::delete('/{cathedra}',         'CathedraController@delete')->   name('admin.cathedra.delete');
 //    });
 
-    Route::group(['prefix' => 'subjects'], function (){
-        Route::get('/',                     'SubjectController@index')->    name('admin.subject.index');
-        Route::get('/create',               'SubjectController@create')->   name('admin.subject.create');
-        Route::post('/',                    'SubjectController@store')->    name('admin.subject.store');
-        Route::get('/{subject}',            'SubjectController@show')->     name('admin.subject.show');
-        Route::get('/{subject}/edit',       'SubjectController@edit')->     name('admin.subject.edit');
-        Route::patch('/{subject}',          'SubjectController@update')->   name('admin.subject.update');
-        Route::delete('/{subject}',         'SubjectController@delete')->   name('admin.subject.delete');
-    });
+//    Route::group(['prefix' => 'subjects'], function (){
+//        Route::get('/',                     'SubjectController@index')->    name('admin.subject.index');
+//        Route::get('/create',               'SubjectController@create')->   name('admin.subject.create');
+//        Route::post('/',                    'SubjectController@store')->    name('admin.subject.store');
+//        Route::get('/{subject}',            'SubjectController@show')->     name('admin.subject.show');
+//        Route::get('/{subject}/edit',       'SubjectController@edit')->     name('admin.subject.edit');
+//        Route::patch('/{subject}',          'SubjectController@update')->   name('admin.subject.update');
+//        Route::delete('/{subject}',         'SubjectController@delete')->   name('admin.subject.delete');
+//    });
 
     Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function (){
         Route::get('/', 'IndexController')->name('admin.blog.index');

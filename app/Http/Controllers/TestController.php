@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Imports\DataImport;
+use App\Models\Cathedra;
 use App\Models\Group;
 use App\Models\Level;
 use App\Models\Program;
@@ -23,7 +24,36 @@ class TestController extends Controller
 
     public function index()
     {
-        $this->seed();
+        $cath = Cathedra::find(1);
+
+        dd($cath->subjects);
+
+
+
+
+//        $student = Student::find(55);
+//        $subject = Subject::find(18);
+//
+////        $subject->students()->attach(54);
+////        $subject->students()->sync(53);
+////        $subject->students()->detach();
+//
+//        $student->subjects()->syncWithoutDetaching($subject->id);
+//
+//
+//
+//
+//
+//
+//
+//        //$student->subjects = $subject;
+//        //$student->save();
+
+
+        dd($student->subjects);
+
+
+
     }
 
     public function seed()

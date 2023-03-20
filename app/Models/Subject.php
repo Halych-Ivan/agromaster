@@ -16,8 +16,15 @@ class Subject extends Model
     protected $guarded = false;
 
 
-//    public function cathedra()
-//    {
-//        return $this->belongsTo(Cathedra::class);
-//    }
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'students_subjects', 'subjects_id', 'students_id');
+//        return $this->belongsToMany(Student::class);
+    }
+
+
+    public function cathedra()
+    {
+        return $this->belongsTo(Cathedra::class);
+    }
 }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('info')->nullable();
             $table->string('tails')->nullable();
+            $table->string('meet')->nullable();
 
             $table->string('position');
             $table->foreignId('cathedra_id')->references('id')->on('cathedras');

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('title')->nullable();
-            $table->string('name')->nullable();
+            $table->string('info')->nullable();
+            $table->string('abbr')->nullable();
             $table->string('link')->nullable();
             $table->string('control')->nullable();
             $table->string('semester')->nullable();
@@ -28,6 +29,8 @@ return new class extends Migration
             $table->string('program')->nullable();
             $table->string('image')->nullable();
             $table->string('code')->nullable();
+            $table->string('year')->nullable();
+            $table->foreignId('cathedra_id')->references('id')->on('cathedras');
 
 //            $table->unsignedBigInteger('cathedra_id');
 //            $table->index('cathedra_id', 'subject_cathedra_idx');

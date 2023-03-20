@@ -1,54 +1,45 @@
-@extends('cabinet.layout')
-@section('title', 'ADMIN')
+@extends('admin.layout.admin')
 
-@section('page-banner')
-
-@endsection
-
+@section('title', 'Викладачі - всі записи')
 
 @section('content')
-    <div class="card card-body">
-        <div class="table-responsive">
-            <table class="table table-striped search-table v-middle">
-                <thead class="header-item">
-                    <th class="text-dark font-weight-bold">ПІБ</th>
-                    <th class="text-dark font-weight-bold">Посада</th>
-                    <th class="text-dark font-weight-bold">Email</th>
-                    <th class="text-dark font-weight-bold">Телефон</th>
-                    <th class="text-center"></th>
-                </thead>
-                <tbody>
-
-        @foreach($teachers as $teacher)
-                    <tr class="search-items">
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="{{$teacher->photo}}" alt="avatar" class="rounded-circle" width="35">
-                                <div class="ml-2">
-                                    <div class="user-meta-info">
-                                        <h5 class="user-name mb-0" data-name="Emma Adams">{{$teacher->name}}</h5>
-                                        <span class="user-work text-muted">каф. {{$teacher->cathedra->title??''}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>{{$teacher->position}}</td>
-                        <td>{{$teacher->email}}</td>
-                        <td>{{$teacher->phone}}</td>
-                        <td class="text-center">
-                            <div class="action-btn">
-                                <a href="{{route('admin.teachers.edit', $teacher->id)}}" class="text-info edit">
-                                    <i class="mdi mdi-account-edit font-20"></i>
-                                </a>
-                                <a href="javascript:void(0)" class="text-dark delete ml-2">
-                                    <i class="mdi mdi-delete font-20"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-        @endforeach
-                </tbody>
-            </table>
+    <div class="">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">№</th>
+                <th class="text-center">Фото</th>
+                <th class="text-center">ПІБ</th>
+                <th class="text-center">Кафедра/посада</th>
+                <th class="text-center">Еmail/телефон</th>
+                <th class="text-center">Примітки</th>
+                <th class="text-center">Активні дії</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($teachers as $teacher)
+                <tr>
+                    <td class="text-center"></td>
+                    <td class="text-center">
+                        @if($teacher->photo)
+                            <img src="{{$teacher->photo}}" alt="" height="75">
+                        @endif
+                    </td>
+                    <td class="text-center"><b><a href="{{route('admin.teachers.show', $teacher->id)}}">{{$teacher->name}}</a></b></td>
+                    <td>
+                        <b><a href="{{route('admin.cathedras.show', $teacher->cathedra->id??0)}}">{{$teacher->cathedra->title??''}}</a></b>
+                        <br>{{$teacher->position}}
+                        <br>{{$teacher->meet}}
+                    </td>
+                    <td><b>{{$teacher->email}} </b><br>{{$teacher->phone}}</td>
+                    <td><b>{{$teacher->info}}</b></td>
+                    <td class="text-center"><x-admin.action-icons resource="teachers" id="{{$teacher->id}}"></x-admin.action-icons></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+                    {{ $teachers->links('admin.layout.pagination') }}
         </div>
     </div>
 @endsection

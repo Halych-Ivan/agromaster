@@ -1,85 +1,33 @@
-@extends('cabinet.layout')
-@section('title', 'ADMIN')
+@extends('admin.layout.admin')
 
-@section('page-banner')
-
-@endsection
-
+@section('title', 'Викладачі - редагування')
 
 @section('content')
+    <x-admin.action-icons resource="teachers" id="{{$teacher->id}}"></x-admin.action-icons>
+    <div class="">
+        <form action="{{route('admin.teachers.update', $teacher->id)}}" method="POST" enctype="multipart/form-data" class="mt-3">
+            @csrf
+            @method('PATCH')
+            <x-form.text name="name" value="{{$teacher->name}}" placeholder="ПІБ"></x-form.text>
+            <x-form.text name="phone" value="{{$teacher->phone}}" placeholder="Телефон"></x-form.text>
+            <x-form.text name="email" value="{{$teacher->email}}" placeholder="Email"></x-form.text>
+            <x-form.text name="meet" value="{{$teacher->meet}}" placeholder="Посилання Google Meet"></x-form.text>
 
-{{--    {{dd($teacher->cathedra->title)}}--}}
-
-    <div class="col-12 col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Редагування картки викладача</h4>
-                <div class="m-t-20">
-                    <form action="{{route('admin.teachers.update', $teacher->id)}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PATCH')
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" value="{{$teacher->name}}" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="position" value="{{$teacher->position}}" placeholder="Посада">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" value="{{$teacher->email}}" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="phone"  value="{{$teacher->phone}}" placeholder="Телефон">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="meet"  value="{{$teacher->meet}}" placeholder="Посилання google.meet">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" id="cathedra" name="cathedra">
-                                <option name="cathedra" value="0">Кафедра</option>
-                                @foreach($cathedras as $cathedra)
-                                    <option name="cathedra" value="{{$cathedra->id}}" {{$cathedra->id == $cathedra_title ? "selected" : ""}}>{{$cathedra->title}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="email-repeater form-group">
-                            <div data-repeater-item class="row mb-3">
-                                <div class="col-md-2">
-                                    <img src="{{$teacher->photo}}" height="100" alt="">
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="photo" id="photo">
-                                        <label class="custom-file-label" for="photo">Виберіть фото</label>
-                                    </div>
-                                </div>
-{{--                                <div class="col-md-2">--}}
-{{--                                    <button type="button" class="btn btn-danger waves-effect waves-light" data-repeater-delete="">--}}
-{{--                                        <i class="ti-close"></i>--}}
-{{--                                    </button>--}}
-{{--                                </div>--}}
-                            </div>
-{{--                            <button type="button" data-repeater-create="" class="btn btn-info waves-effect waves-light">Add More File--}}
-{{--                            </button>--}}
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success waves-effect waves-light" type="submit">Submit
-                            </button>
-                            <input class="btn btn-primary" type="submit" value="Edit">
-                        </div>
-                    </form>
+            <x-form.text name="position" value="{{$teacher->position}}" placeholder="Посада"></x-form.text>
+            <div class="mb-3">
+                <div class="input-group m-3">
+                    <label class="input-group-text w-25" for="select01">Кафедра</label>
+                    <select class="form-select w-75" id="select01" name="cathedra_id">
+                        @foreach($cathedras as $cathedra)
+                            <option value="{{$cathedra->id}}" {{($teacher->cathedra->id??'' == $cathedra->id) ? 'selected' : '' }}>{{$cathedra->title}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
-        </div>
+
+            <x-form.file src="{{$teacher->photo}}" name="photo" title="Виберіть фото" type="img"></x-form.file>
+            <x-form.textarea rows="3" name="info" value="{{$teacher->info}}"></x-form.textarea>
+            <x-form.botton></x-form.botton>
+        </form>
     </div>
-
-
-
-
-
-
-
-
 @endsection

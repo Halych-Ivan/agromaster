@@ -48,16 +48,14 @@
                             <span class="hide-menu">Викладачі</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a href="{{route('admin.subjects.index')}}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu">Дисципліни</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
-
-
-
-
-
-
-
-
 
 
 
@@ -66,13 +64,13 @@
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                    aria-expanded="false">
                     <i class="mdi mdi-gauge"></i>
-                    <span class="hide-menu">Dashboard </span>
+                    <span class="hide-menu">Загальні налаштування</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
-                        <a href="index.html" class="sidebar-link">
+                        <a href="{{route('admin.levels.index')}}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> Dashboard 1 </span>
+                            <span class="hide-menu">Рівні освіти</span>
                         </a>
                     </li>
                     <li class="sidebar-item">

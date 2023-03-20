@@ -22,4 +22,12 @@ class Student extends Model
     {
         return $this->belongsTo(Group::class, 'group_id');
     }
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'students_subjects', 'students_id', 'subjects_id');
+//        return $this->belongsToMany(Subject::class);
+    }
+
+
 }
