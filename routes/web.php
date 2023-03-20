@@ -223,7 +223,20 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 });
 
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+    return "linkstorage is done.";
+});
 
+
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+
+    return "Cache is clear.";
+});
 
 
 Route::middleware([

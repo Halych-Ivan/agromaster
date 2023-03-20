@@ -39,22 +39,22 @@ class Controller extends BaseController
 
 
         if(isset($request['photo'])){
-            $url = $request['photo']->storePublicly('public/'.$folder.'/'.$model->id);
+            $url = $request['photo']->storePublicly($folder.'/'.$model->id, 'public');
             $model->photo = Storage::url($url);
         }
 
         if(isset($request['logo'])){
-            $url = $request['logo']->storePublicly('public/'.$folder.'/'.$model->id);
-            $model->logo = Storage::url($url);
+            $url = $request['logo']->storePublicly($folder.'/'.$model->id, 'public');
+            $model->photo = Storage::url($url);
         }
 
         if(isset($request['image'])){
-            $url = $request['image']->storePublicly('public/'.$folder.'/'.$model->id);
+            $url = $request['image']->storePublicly($folder.'/'.$model->id, 'public');
             $model->image = Storage::url($url);
         }
 
         if(isset($request['file'])){
-            $url = $request['file']->storePublicly('public/'.$folder.'/'.$model->id);
+            $url = $request['file']->storePublicly($folder.'/'.$model->id, 'public');
             $model->file = Storage::url($url);
         }
 
