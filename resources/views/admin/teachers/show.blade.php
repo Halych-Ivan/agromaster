@@ -30,7 +30,7 @@
                 <td>Фото</td>
                 <th>
                     {{$teacher->photo}}
-                    <img src="{{$teacher->photo}}" alt="" height="100">
+                    <img src="{{asset($teacher->photo)}}" alt="" height="100">
                 </th>
             </tr>
             <tr>
