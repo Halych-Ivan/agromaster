@@ -131,6 +131,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('teachers', App\Http\Controllers\Admin\TeachersController::class);
 
     Route::resource('groups', App\Http\Controllers\Admin\GroupsController::class);
+    Route::resource('students', App\Http\Controllers\Admin\StudentsController::class);
 
 
 
@@ -223,20 +224,22 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 });
 
 
-Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
-    return "linkstorage is done.";
-});
 
-
-Route::get('/clear', function () {
-    Artisan::call('cache:clear');
-    Artisan::call('config:cache');
-    Artisan::call('view:clear');
-    Artisan::call('route:clear');
-
-    return "Cache is clear.";
-});
+//
+//Route::get('/linkstorage', function () {
+//    Artisan::call('storage:link');
+//    return "linkstorage is done.";
+//});
+//
+//
+//Route::get('/clear', function () {
+//    Artisan::call('cache:clear');
+//    Artisan::call('config:cache');
+//    Artisan::call('view:clear');
+//    Artisan::call('route:clear');
+//
+//    return "Cache is clear.";
+//});
 
 
 Route::middleware([

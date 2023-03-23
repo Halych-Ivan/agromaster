@@ -72,8 +72,6 @@ return new class extends Migration
 
 
 
-
-
             $table->string('mentor')->nullable();
             $table->string('info')->nullable();
 
