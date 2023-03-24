@@ -65,6 +65,7 @@ class AdminRequest extends FormRequest
             'school_document_date' => 'nullable|string|max:255',
             'school_document_mark' => 'nullable|string|max:255',
             'mentor' => 'nullable|string|max:255',
+            'search' => 'nullable|string|max:255',
 
 
 

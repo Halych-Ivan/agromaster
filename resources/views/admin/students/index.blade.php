@@ -3,10 +3,19 @@
 @section('title', 'Студенти - всі записи')
 
 @section('content')
+
     @php(session(['page' => $students->currentPage()]))
+
 
     <div class="">
         {{ $students->links('admin.layout.pagination') }}
+
+        <form class="d-flex m-3" role="search" action="{{route('admin.students.index')}}">
+{{--            @csrf--}}
+            <input class="form-control w-50" name="search" type="search" placeholder="{{session('search'??'Пошук по прізвищу')}}" aria-label="Search">
+            <button class="btn btn-outline-primary ml-3 mr-5" type="submit">Пошук</button>
+            <a href="{{route('admin.students.index', 'search=0')}}" class="btn btn-outline-primary">Всі записи</a>
+        </form>
         <table class="table table-bordered">
             <thead>
             <tr>

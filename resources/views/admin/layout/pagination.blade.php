@@ -1,6 +1,22 @@
 @if ($paginator->hasPages())
+{{--{{dd($paginator->currentPage())}}--}}
     <nav aria-label="">
+
         <ul class="pagination">
+
+            @if($paginator->lastPage() > 10)
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Обрати сторінку
+                </a>
+                <ul class="dropdown-menu">
+                    @for($i=1; $i<= $paginator->lastPage(); $i++)
+                        <a class="m-1" href="{{$paginator->url($i) }}">{{ $i }}</a>
+                    @endfor
+                </ul>
+            </li>
+            @endif
+
             <li class="page-item">
             @if ($paginator->onFirstPage())
 {{--                <span class="page-link" href="#" aria-label="Previous">--}}

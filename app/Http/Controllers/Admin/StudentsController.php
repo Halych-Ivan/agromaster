@@ -11,10 +11,21 @@ use Illuminate\Http\Request;
 class StudentsController extends Controller
 {
 
-    public function index()
+    public function index(AdminRequest $request)
     {
+        $data = $request->validated();
         $size = $request['size'] ?? 10;
-        $students = Student::query()->orderBy('surname')->paginate($size);
+
+        if(isset($data['search'])){
+            if($data['search'] == 0) session()->forget('search');
+            else session(['search' => $data['search']]);
+        }
+
+        $students = Student::query()
+            ->where('surname', 'like', session('search').'%')
+            ->orderBy('surname')
+            ->paginate($size);
+
         return view('admin.students.index', compact('students'));
     }
 
@@ -52,7 +63,8 @@ class StudentsController extends Controller
 //        dd($request);
         $data = $request->validated();
         $this->saveData($data, $student, 'students'); // protected in Controller
-        return redirect()->route('admin.students.index')->with('alert', 'Дія виконана успішно!');
+        $page = (session('page')) ?'page='.session('page') : '';
+        return redirect()->route('admin.students.index' , $page)->with('alert', 'Дія виконана успішно!');
     }
 
 
