@@ -28,4 +28,10 @@ class Program extends Model
     {
         return $this->belongsTo(Specialty::class, 'specialty_id');
     }
+
+
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
 }

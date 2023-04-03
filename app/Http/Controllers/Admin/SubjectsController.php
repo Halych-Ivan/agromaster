@@ -3,17 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\AdminRequest;
+use App\Models\Cathedra;
+use App\Models\Program;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class SubjectsController extends Controller
 {
 
-    public function index()
+    public function index(AdminRequest $request)
     {
+        $data = $request->validated();
+        $size = $request['size'] ?? 10;
+
+        if(isset($data['search'])){
+            if($data['search'] == 0) session()->forget('search');
+            else session(['search' => $data['search']]);
+        }
+
         $subjects = Subject::query()
-            ->select(['id', 'title', 'semester', 'size', 'control', 'cathedra_id'])
-            ->get();
+            ->where('title', 'like', session('search').'%')
+            ->select(['id', 'title', 'semester', 'size', 'control', 'cathedra_id', 'program_id'])
+            ->paginate($size);
         return view('admin.subjects.index', compact('subjects'));
     }
 
@@ -30,16 +42,17 @@ class SubjectsController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Subject $subject)
     {
-        //
+        dd($subject->program->year);
     }
 
 
-    public function edit($id)
+    public function edit(Subject $subject)
     {
-        $subject = Subject::find($id);
-        return view('admin.subjects.edit', compact('subject'));
+        $cathedras = Cathedra::all();
+        $programs = Program::all();
+        return view('admin.subjects.edit', compact('subject', 'cathedras', 'programs'));
     }
 
 

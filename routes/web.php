@@ -27,7 +27,10 @@ Route::post('/contact/form','\App\Http\Controllers\MailController@contact_form')
 Route::view('/schedule','edumate.schedule')->name('schedule'); // розклад
 Route::view('/lists','edumate.lists')->name('lists'); // списки груп
 Route::view('/session','edumate.session')->name('session'); // сесія
-Route::view('/admission','edumate.admission.index')->name('admission'); // інд. план
+
+//Route::view('/admission','edumate.admission.index')->name('admission'); // Вступ
+Route::view('/admission','edumate.admission.001')->name('admission'); // Вступ
+
 Route::view('/statement','edumate.statement')->name('statement'); // заяви
 
 
@@ -137,7 +140,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
 
 
     Route::resource('subjects', App\Http\Controllers\Admin\SubjectsController::class);
-    Route::resource('plans', App\Http\Controllers\Admin\PlansController::class);
+//    Route::resource('plans', App\Http\Controllers\Admin\PlansController::class);
 });
 
 

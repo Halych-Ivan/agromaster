@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('content')->nullable();
             $table->string('size')->nullable();
             $table->string('syllabus')->nullable();
-            $table->string('program')->nullable();
             $table->string('image')->nullable();
             $table->string('code')->nullable();
             $table->string('year')->nullable();
