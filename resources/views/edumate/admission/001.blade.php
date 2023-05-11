@@ -15,6 +15,4 @@
     <img src="{{asset('images/admission/192.jpg')}}" width="" height="" alt="">
     <img src="{{asset('images/admission/191.jpg')}}" width="" height="" alt="">
 
-
-
 @endsection

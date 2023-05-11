@@ -77,6 +77,7 @@
                                     <li><a href="{{route('session')}}">{{__('Розклад іспитів')}}</a></li>
                                     <li><a href="{{ route('curriculum') }}">{{__('Індивідуальний графік')}}</a></li>
                                     <li><a href="{{ route('statement') }}">{{__('Зразок заяви')}}</a></li>
+                                    <li><a href="{{ route('registration') }}">{{__('Реєстрація на ЄВІ')}}</a></li>
 {{--                                <li><a href="#">{{__('Списки груп')}}</a></li>--}}
                                 </ul>
                             </li>

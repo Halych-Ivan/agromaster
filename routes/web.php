@@ -32,6 +32,7 @@ Route::view('/session','edumate.session')->name('session'); // сесія
 Route::view('/admission','edumate.admission.001')->name('admission'); // Вступ
 
 Route::view('/statement','edumate.statement')->name('statement'); // заяви
+Route::view('/registration','edumate.registration')->name('registration'); // заяви
 
 
 
