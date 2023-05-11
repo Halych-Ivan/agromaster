@@ -14,7 +14,7 @@
                     <div class="single-notice">
                         <span class="number">--></span>
                         <h3 class="notice-title">Реєстрація на ЄВІ (у разі дистанційної реєстрації)</h3>
-                        <p>Для офомлення екзаменаціфного листка вам необхідно заповнити <b><u><a href="{{ asset('documents/statement/topic.pdf') }}">ЗАЯВУ-АНКЕТУ</a></u></b> та прислати на
+                        <p>Для офомлення екзаменаційного листка вам необхідно заповнити <b><u><a href="{{ asset('documents/statement/topic.pdf') }}">ЗАЯВУ-АНКЕТУ</a></u></b> та прислати на
                             електронну пошту <u>agro.master.ua@gmail.com</u> скановану заяву. <br>
                         Оригінал заяви відправити на нову пошту:
                             <ul class="ml-3">
