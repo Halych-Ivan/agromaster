@@ -1,7 +1,8 @@
 @extends('layouts.index')
 
-@section('title', 'Облік ВМП')
-@section('description', 'asgergherhgewrgherghergerger')
+@section('title', 'Облік у ВМП університету')
+@section('description', 'Терміново, всім хто вступив до університету у 2022 році необхідно стати на облік
+військово-мобілізаційному підрозділі університету. Хто не виконає вимогу до 31 травня - буде скасовано наказ на зарахування')
 
 @section('page-banner')
         <x-page-banner title="Облік у ВМП" img="/images/page-banner-1.jpg"></x-page-banner>
