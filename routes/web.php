@@ -33,6 +33,7 @@ Route::view('/admission','edumate.admission.001')->name('admission'); // Вст�
 
 Route::view('/statement','edumate.statement')->name('statement'); // заяви
 Route::view('/registration','edumate.registration')->name('registration'); // заяви
+Route::view('/oblik_VMV','edumate.oblik_VMV')->name('oblik_VMV'); // заяви
 
 
 
