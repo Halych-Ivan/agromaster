@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('title', 'Облік ВМП')
-@section('content', 'asgergherhgewrgherghergerger')
+@section('description', 'asgergherhgewrgherghergerger')
 
 @section('page-banner')
         <x-page-banner title="Облік у ВМП" img="/images/page-banner-1.jpg"></x-page-banner>

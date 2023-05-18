@@ -14,7 +14,7 @@
         <meta property="og:title" content="">
         <meta property="og:site_name" content="">
         <meta property="og:url" content="{{ route('home') }}">
-        <meta property="og:description" content="@yield('content', '')">
+        <meta property="og:description" content="@yield('description', '')">
         <meta property="og:image" content="{{ asset('/apple-touch-icon.png') }} " />
         <meta property="og:image:width" content="180"/>
         <meta property="og:image:height" content="180"/>
