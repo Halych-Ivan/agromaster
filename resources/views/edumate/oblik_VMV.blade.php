@@ -1,6 +1,7 @@
 @extends('layouts.index')
 
-@section('title', 'Облік ВМВ')
+@section('title', 'Облік ВМП')
+@section('content', 'asgergherhgewrgherghergerger')
 
 @section('page-banner')
         <x-page-banner title="Облік у ВМП" img="/images/page-banner-1.jpg"></x-page-banner>
@@ -45,6 +46,7 @@
                             Для уточнення питань, що Вас цікавлять, звертайтесь до виконуючої обов'язки начальника
                             військово-мобілізаційного підрозділу ДБТУ:<br>
                             <b>Плахотіна Ганна Вікторівна</b><br>
+                            <u>вул. Алчевських 44, 3 поверх, кабінет 306</u><br>
                             Тел.: (099) 609-00-05, (063) 347-27-26<br>
                             E-mail: vmv215@ukr.net
                         </p>

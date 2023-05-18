@@ -78,7 +78,7 @@
 {{--                                    <li><a href="{{ route('curriculum') }}">{{__('Індивідуальний графік')}}</a></li>--}}
                                     <li><a href="{{ route('statement') }}">{{__('Зразок заяв')}}</a></li>
                                     <li><a href="{{ route('registration') }}">{{__('Реєстрація на ЄВІ')}}</a></li>
-                                    <li><a href="{{ route('oblik_VMV') }}">{{__('Облік ВМВ')}}</a></li>
+                                    <li><a href="{{ route('oblik_VMV') }}">{{__('Облік ВМП')}}</a></li>
 {{--                                <li><a href="#">{{__('Списки груп')}}</a></li>--}}
                                 </ul>
                             </li>
