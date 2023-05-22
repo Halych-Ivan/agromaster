@@ -83,14 +83,13 @@
                                 </ul>
                             </li>
 
-{{--                            <li>--}}
-{{--                                <a href="#">{{__('Наука')}}</a>--}}
-{{--                                <ul class="nav-dropdown nav-submenu">--}}
-{{--                                    <li><a href="event.html">Event 01</a></li>--}}
-{{--                                    <li><a href="event-2.html">Event 02</a></li>--}}
-{{--                                    <li><a href="event-details.html">Event Details</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
+                            <li>
+                                <a href="#">{{__('Наука')}}</a>
+                                <ul class="nav-dropdown nav-submenu">
+                                    <li><a href="{{asset('https://agromaster.info')}}">Технічний прогрес в АПВ</a></li>
+                                    <li><a href="{{asset('opp')}}">Освітня програма</a></li>
+                                </ul>
+                            </li>
 
 {{--                            <li>--}}
 {{--                                <a href="{{route('blog')}}">{{__('Новини')}}</a>--}}
