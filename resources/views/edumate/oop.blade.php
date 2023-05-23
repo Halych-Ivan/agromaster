@@ -21,9 +21,13 @@
                                 <a href="{{ asset('pdf/opp/NP-208-agroinzheneriya-bakalavr-2023.pdf') }}">Навчальний
                                     план "Агроінженерія" (бакалавр)</a>
                             </div>
-                            <div class="btn btn-primary">
+                            <div class="btn btn-primary mt-1">
                                 <a href="{{ asset('pdf/opp/NP-208-agroinzheneriya-magistr-2023.pdf') }}">Навчальний план
                                     "Агроінженерія" (магістр, ОПП)</a>
+                            </div>
+                            <div class="btn btn-primary mt-1">
+                                <a href="{{ asset('pdf/opp/NP-208-agroinzheneriya-magistr-onp-2023.pdf') }}">Навчальний план
+                                    "Агроінженерія" (магістр, ОНП)</a>
                             </div>
                         </div>
                         <p>
