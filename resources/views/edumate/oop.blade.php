@@ -13,9 +13,25 @@
             <div class="row w-90 m-auto">
                 <div class="notice-content">
                     <div class="single-notice">
+                        <h3 class="notice-title">Освітні програми спеціальності 208 "Агроінженерія"</h3>
+                        <div class="mt-3">
+                            <div class="btn btn-primary">
+                                <a href="{{ asset('pdf/opp/OP-208-agroinzheneriya-bakalavr-2023.pdf') }}">Освітня програма
+                                    "Агроінженерія" (бакалавр)</a>
+                            </div>
+                            <div class="btn btn-primary mt-1">
+                                <a href="{{ asset('pdf/opp/OP-208-agroinzheneriya-opp-2022.pdf') }}">Освітня програма
+                                    "Агроінженерія" (магістр, ОПП)</a>
+                            </div>
+                            <div class="btn btn-primary mt-1">
+                                <a href="{{ asset('pdf/opp/OP-208-agroinzheneriya-onp-2022.pdf') }}">Освітня програма
+                                    "Агроінженерія" (магістр, ОНП)</a>
+                            </div>
+                        </div>
+
                         <h3 class="notice-title"><a
-                                href="{{ asset('pdf/opp/OP-208-agroinzheneriya-bakalavr-2023.pdf') }}">Освітня програма
-                                "Агроінженерія"</a></h3>
+                                href="{{ asset('pdf/opp/OP-208-agroinzheneriya-bakalavr-2023.pdf') }}">Навчальний план вступу 2023 року
+                                </a></h3>
                         <div class="mt-3">
                             <div class="btn btn-primary">
                                 <a href="{{ asset('pdf/opp/NP-208-agroinzheneriya-bakalavr-2023.pdf') }}">Навчальний
