@@ -29,7 +29,7 @@
                             </div>
                         </div>
 
-                        <h3 class="notice-title"><a
+                        <h3 class="notice-title mt-3"><a
                                 href="{{ asset('pdf/opp/OP-208-agroinzheneriya-bakalavr-2023.pdf') }}">Навчальний план вступу 2023 року
                                 </a></h3>
                         <div class="mt-3">
