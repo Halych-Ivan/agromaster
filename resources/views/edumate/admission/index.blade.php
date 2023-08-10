@@ -12,45 +12,41 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-2">
-                        <h2 class="title">Оформлення договору на навчання</h2>
+                        <h2 class="title">Підтвердження вступу та оформлення договору на навчання</h2>
                         <span class="line"></span>
-                        <p>Для підтвердження вашого вступу необхідно підписати договір про навчання та контракт
-                            про надання платних освітніх послуг.
-                            Договір та контракт потрібно роздрукувати <u>на аркуші з двох сторін у трьох примірниках
-                                кожен</u> та заповнити по зразку.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="notice-content">
-                <div class="single-notice">
-                    <span class="number">1.</span>
-                    <h3 class="notice-title">
-                        <a href="{{ asset('storage/uploads/ДОГОВОР.pdf') }}"
-                           target="_blank">Договір про надання освітніх послуг <u>(завантажити)</u></a>
-                    </h3>
-                    <p></p>
-                </div>
-                <div class="single-notice">
-                    <span class="number">2.</span>
-                    <h3 class="notice-title">
-                        <a href="{{ asset('storage/uploads/КОНТРАКТ.pdf') }}"
-                            target="_blank">Контракт <u>(завантажити)</u></a>
-                    </h3>
-                    <p></p>
-                </div>
+                        <h4 class="mt-4">Перелік документів</h4>
+                        <p>Для підтвердження вашого вступу до <b>Державного біотехнологічного університету</b> на факультет мехатроніки та інжиніригу
+                            необхідно подати пакет документів:</p>
+                        <ul>
+                            <li>- Заявка (друкується із бази ЄДЕБО або кабінету вступника);</li>
+                            <li><a href="{{ asset('pdf/admission/agreement.pdf') }}"
+                                   target="_blank">- Договір про надання освітніх послуг (2 екземпляри)<u>(завантажити)</u></a></li>
+                            <li><a href="{{ asset('pdf/admission/contract.pdf') }}"
+                                   target="_blank">- Контракт про надання платної освітньої послуги (2 екземпляри)<u>(завантажити)</u></a></li>
+                            <li><a href="{{ asset('pdf/admission/message.pdf') }}"
+                                   target="_blank">- Повідомлення про проходження акредитації у поточному навчальному році (тільки для спеціальності 208 Агроінженерія)<u>(завантажити)</u></a></li>
+                            <li>- Фото 3х4 (дві шт.)</li>
+                            <li>- Копія паспорту (всі заповнені сторінки)</li>
+                            <li>- Копія РНОКПП (Ідентифікаційний код)</li>
+                            <li>- Копія документу про освіту з додатком (диплом, атестат, свідоцтво ПЗСО)</li>
+                            <li>- Копія військово-облікового документу. А саме приписне свідоцтво, якщо вступнику до 27 років, або війсковий квиток всі сторінки. Допускається тимчасове посвідчення.
+                                Обовязково має бути відмітка <b>взятий на облік</b>. У разі відсуттності даного документу пишеться
+                                <a href="{{ asset('pdf/admission/receipt.jpg') }}" target="_blank"><u><b>розписка</b></u></a> про те, що протягом місяця ви
+                            зобов'яуєтесь оформити доний документ та додається фотокопія направлення на медичний огляд від поліклініки.</li>
+                        </ul>
 
-                <div class="single-notice">
-                    <h4>Після заповнення необхідно прислати фото заповнених договорів та відправити їх
-                        новою поштою на адресу:</h4>
-                    <ul class="mt-2">
-                        <li><h4 style="color: black;">- м. Харків, нова пошта №34,</h4></li>
-                        <li><h4 style="color: black;">- Галич Іван Васильович,</h4></li>
-                        <li><h4 style="color: black;">- (097) 850-36 82.</h4></li>
-                    </ul>
-                    <p>aбо кожного вівторка з 9:00 до 12:00 приїхати до університету за адресою м. Харків, вул. Різдвянa 19
-                    (станція метро Центральний ринок) та заповнити договори</p>
-                    <h4 class="mt-3">Фото заповнених договорів обов'язково відправити на електронну адресу: {{\App\Config::EMAIL}}</h4>
-                </div>
+                        <h4 class="mt-4">Підтвердження вступу, подача документів</h4>
+
+                        <p>Фотокопію підписаної заявки завантажити в електронний кабінет, або відправити на електронну адресу <b>agromaster.info@ukr.net</b> та
+                            вказати логін і пароль від кабінету (якщо створювали самостійно).</p>
+
+                        <p>Дані документи можна підписати особисто в університеті ДБТУ: м. Харків, вул. Алчевських 44, кімната 210.</p>
+
+                        <p>Або відправити новою поштою на адресу:<br>
+                            - м. Харків, нова пошта №91,<br>
+                            - Галич Іван Васильович,<br>
+                            - (097) 850-36 82.<br>
+                        </p>
 
                 <div class="single-notice faq-wrapper">
                     <h4>Приклад заповнення договору та контракту:</h4>
@@ -65,16 +61,16 @@
                             <div id="collapse1" class="collapse" data-parent="#accordion">
                                 <div class="card-body">
                                     <h5 class="mt-1">Контракт
-                                        <a href="{{ asset('storage/uploads/КОНТРАКТ_(приклад_магістр_денна).pdf') }}"
+                                        <a href="{{ asset('pdf/admission/contract-5.pdf') }}"
                                            target="_blank"><u>денна форма навчання</u></a> ||
-                                        <a href="{{ asset('storage/uploads/КОНТРАКТ_(приклад_магістр_заочна).pdf') }}"
-                                           target="_blank"><u>заочна форма навчання</u></a>
+{{--                                        <a href="{{ asset('pdf/admission/contract-5.pdf.pdf') }}"--}}
+{{--                                           target="_blank"><u>заочна форма навчання</u></a>--}}
                                     </h5>
                                     <h5 class="mt-3">Договір
-                                        <a href="{{ asset('storage/uploads/ДОГОВОР_(приклад_208М).pdf') }}"
+                                        <a href="{{ asset('pdf/admission/agreement-208-5.pdf') }}"
                                            target="_blank"><u>208 Агроінженерія</u></a> ||
-                                        <a href="{{ asset('storage/uploads/ДОГОВОР_(приклад_274М).pdf') }}"
-                                           target="_blank"><u>274 Автомобільний транспорт</u></a>
+{{--                                        <a href="{{ asset('pdf/admission/agreement-208-5.pdf') }}"--}}
+{{--                                           target="_blank"><u>274 Автомобільний транспорт</u></a>--}}
                                     </h5>
                                 </div>
                             </div>
@@ -82,22 +78,45 @@
 
                         <div class="card mt-3">
                             <div class="card-header" id="headingFive">
-                                <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2">Бакалаврат</a>
+                                <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2">Бакалаврат (1 курс, вступ після школи, ліцею)</a>
                             </div>
 
                             <div id="collapse2" class="collapse" data-parent="#accordion">
                                 <div class="card-body">
                                     <h5 class="mt-1">Контракт
-                                        <a href="{{ asset('storage/uploads/КОНТРАКТ_(приклад_бакалавр_денна).pdf') }}"
+                                        <a href="{{ asset('pdf/admission/contract-1.pdf') }}"
                                            target="_blank"><u>денна форма навчання</u></a> ||
-                                        <a href="{{ asset('storage/uploads/КОНТРАКТ_(приклад_бакалавр_заочна).pdf') }}"
-                                           target="_blank"><u>заочна форма навчання</u></a>
+{{--                                        <a href="{{ asset('pdf/admission/contract-1.pdf') }}"--}}
+{{--                                           target="_blank"><u>заочна форма навчання</u></a>--}}
                                     </h5>
                                     <h5 class="mt-3">Договір
-                                        <a href="{{ asset('storage/uploads/ДОГОВОР_(приклад_208Б).pdf') }}"
+                                        <a href="{{ asset('pdf/admission/agreement-208-1.pdf') }}"
                                            target="_blank"><u>208 Агроінженерія</u></a> ||
-                                        <a href="{{ asset('storage/uploads/ДОГОВОР_(приклад_274Б).pdf') }}"
-                                           target="_blank"><u>274 Автомобільний транспорт</u></a>
+{{--                                        <a href="{{ asset('pdf/admission/agreement-208-1.pdf') }}"--}}
+{{--                                           target="_blank"><u>274 Автомобільний транспорт</u></a>--}}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-3">
+                            <div class="card-header" id="headingFive">
+                                <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3">Бакалаврат (2 курс, вступ після коледжу, бакалавра, спеціаліста чи магістра)</a>
+                            </div>
+
+                            <div id="collapse3" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h5 class="mt-1">Контракт
+                                        <a href="{{ asset('pdf/admission/contract-2.pdf') }}"
+                                           target="_blank"><u>денна форма навчання</u></a> ||
+{{--                                        <a href="{{ asset('pdf/admission/contract-2.pdf') }}"--}}
+{{--                                           target="_blank"><u>заочна форма навчання</u></a>--}}
+                                    </h5>
+                                    <h5 class="mt-3">Договір
+                                        <a href="{{ asset('pdf/admission/agreement-208-2.pdf') }}"
+                                           target="_blank"><u>208 Агроінженерія</u></a> ||
+{{--                                        <a href="{{ asset('pdf/admission/agreement-208-2.pdf') }}"--}}
+{{--                                           target="_blank"><u>274 Автомобільний транспорт</u></a>--}}
                                     </h5>
                                 </div>
                             </div>
