@@ -84,10 +84,10 @@
                             </li>
 
                             <li>
-                                <a href="#">{{__('Наука')}}</a>
-                                <ul class="nav-dropdown nav-submenu">
+{{--                                <a href="#">{{__('Наука')}}</a>--}}
+{{--                                <ul class="nav-dropdown nav-submenu">--}}
 {{--                                    <li><a href="{{asset('https://agromaster.info')}}">Технічний прогрес в АПВ</a></li>--}}
-                                    <li><a href="{{asset('opp')}}">Освітня програма</a></li>
+{{--                                    <li><a href="{{asset('opp')}}">Освітня програма</a></li>--}}
                                 </ul>
                             </li>
 
