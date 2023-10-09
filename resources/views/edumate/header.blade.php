@@ -50,11 +50,11 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('admission') }}">{{__('Вступ')}}</a>
+{{--                                <a href="{{ route('admission') }}">{{__('Вступ')}}</a>--}}
                             </li>
 
                             <li>
-                                <a href="#">{{__('Навчання')}}</a>
+{{--                                <a href="#">{{__('Навчання')}}</a>--}}
                                 <ul class="nav-dropdown nav-submenu">
 {{--                                    <li>--}}
 {{--                                        <a href="#">{{__('Освітні програми')}}</a>--}}
@@ -66,7 +66,7 @@
 {{--                                        </ul>--}}
 {{--                                    </li>--}}
                                     <li>
-                                        <a href="{{route('schedule')}}">{{__('Розклад занять')}}</a>
+{{--                                        <a href="https://agromaster.info">{{__('Розклад занять')}}</a>--}}
 
 {{--                                        <ul class="nav-dropdown nav-submenu">--}}
 {{--                                            <li><a href="our-courses-list.html">Courses List</a></li>--}}
@@ -74,11 +74,11 @@
 {{--                                            <li><a href="our-courses-list-right-sidebar.html">Courses List Right Sidebar</a></li>--}}
 {{--                                        </ul>--}}
                                     </li>
-                                    <li><a href="{{route('session')}}">{{__('Розклад іспитів')}}</a></li>
+{{--                                    <li><a href="{{route('session')}}">{{__('Розклад іспитів')}}</a></li>--}}
 {{--                                    <li><a href="{{ route('curriculum') }}">{{__('Індивідуальний графік')}}</a></li>--}}
-                                    <li><a href="{{ route('statement') }}">{{__('Зразок заяв')}}</a></li>
-                                    <li><a href="{{ route('registration') }}">{{__('Реєстрація на ЄВІ')}}</a></li>
-                                    <li><a href="{{ route('oblik_VMV') }}">{{__('Облік ВМП')}}</a></li>
+{{--                                    <li><a href="{{ route('statement') }}">{{__('Зразок заяв')}}</a></li>--}}
+{{--                                    <li><a href="{{ route('registration') }}">{{__('Реєстрація на ЄВІ')}}</a></li>--}}
+{{--                                    <li><a href="{{ route('oblik_VMV') }}">{{__('Облік ВМП')}}</a></li>--}}
 {{--                                <li><a href="#">{{__('Списки груп')}}</a></li>--}}
                                 </ul>
                             </li>
@@ -86,7 +86,7 @@
                             <li>
                                 <a href="#">{{__('Наука')}}</a>
                                 <ul class="nav-dropdown nav-submenu">
-                                    <li><a href="{{asset('https://agromaster.info')}}">Технічний прогрес в АПВ</a></li>
+{{--                                    <li><a href="{{asset('https://agromaster.info')}}">Технічний прогрес в АПВ</a></li>--}}
                                     <li><a href="{{asset('opp')}}">Освітня програма</a></li>
                                 </ul>
                             </li>
