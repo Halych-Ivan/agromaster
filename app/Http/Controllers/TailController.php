@@ -29,10 +29,12 @@ class TailController extends Controller
         $data = $request->validate([
             'gradebook' => ['nullable', 'string', 'max:10'],
             'surname' => ['nullable', 'string', 'max:25'],
-            'semester' => ['nullable', 'string', 'max:3'],
+            'semester' => ['nullable', 'string', 'max:4'],
             'viberbot' => ['nullable', 'string', 'max:50'],
             'teacher' => ['nullable', 'string', 'max:50'],
         ]);
+
+
         if($data['semester'] == 'VV') $data['semester'] = 'VIII';
         $teacher = $data['teacher'] ?? '';
 
