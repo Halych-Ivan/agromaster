@@ -1,5 +1,6 @@
 <?php
 
+
 include 'config.php';
 
 
@@ -8,11 +9,12 @@ $text = $_GET['txt'] ?? '';
 $url = $_GET['url'] ?? false;
 
 
+
+
 $type = ($url) ? 'url' : 'text';
 
 
-
-sendMsg($id, $text, $type);  
+sendMsg($id, $text, $type);
 
 
 ?>

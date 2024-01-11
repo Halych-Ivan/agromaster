@@ -2,20 +2,22 @@
 
     $id = $_GET['id'];
 
+    var_dump($id);
+
 	$auth_token = '50703e63d6a7e5d8-5588a2b04853c18c-bc4a2559a855c9da';
 	$webhook = 'https://bot.agromaster.pp.ua/index.php';
-	
-	$jsonData = 
+
+	$jsonData =
 	'{
 		"auth_token": "'.$auth_token.'",
 		"url": "'.$webhook.'",
 		"send_name": true,
 		"send_photo": true,
 		"event_types": ["subscribed", "unsubscribed", "delivered", "message", "seen"],
-		
+
 		"id": "'.$id.'"
 	}';
-	
+
 	$ch = curl_init('https://chatapi.viber.com/pa/get_user_details');
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
