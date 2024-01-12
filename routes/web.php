@@ -121,6 +121,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 // TestController
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index']);
+Route::get('/seed', [\App\Http\Controllers\TestController::class, 'seed']);
 
 //************************************************************
 // Admin panel

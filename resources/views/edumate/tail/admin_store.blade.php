@@ -31,7 +31,7 @@
                                 <div class="card-header" id="heading{{$subject->id}}">
                                     <a href="#" data-toggle="collapse" data-target="#collapse{{$subject->id}}">
                                         <h5 class="">{{ $subject->title }}</h5>
-                                        <p class=""><b>{{ $subject->teacher }}</b></p>
+                                        <p class=""><b>{{ $subject->сontrol }}</b></p>
                                     </a>
                                 </div>
                                 <div id="collapse{{$subject->id}}" class="collapse" data-parent="#accordionExample">
